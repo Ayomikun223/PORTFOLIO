@@ -1,0 +1,32 @@
+module.exports = {
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        wine: {
+          50: '#fdf2f4',
+          100: '#fbe2ea',
+          200: '#f3c4d3',
+          300: '#e99bb1',
+          400: '#db7395',
+          500: '#be4f74',
+          600: '#9d3c5f',
+          700: '#7b1f3d',
+          800: '#4d1328',
+          900: '#220b13',
+        },
+      },
+      boxShadow: {
+        glow: '0 0 40px rgba(123, 31, 61, 0.35)',
+      },
+      fontFamily: {
+        serif: ['Cormorant Garamond', 'serif'],
+      },
+    },
+  },
+  plugins: [],
+};

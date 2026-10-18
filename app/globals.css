@@ -1,27 +1,245 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+const skills = [
+  'Blockchain',
+  'Web Development',
+  'AI & Product Thinking',
+  'JavaScript / TypeScript',
+  'Next.js',
+  'React',
+  'Tailwind CSS',
+  'Smart Contracts',
+  'Problem Solving',
+];
 
-:root {
-  color-scheme: dark;
-}
+const socialLinks = [
+  { label: 'GitHub', href: 'https://github.com/Ayomikun223', icon: 'GH' },
+  { label: 'Twitter', href: 'https://twitter.com/Crypt_Habiby', icon: 'X' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/habeeb-abdul-ganiy-6a6281355', icon: 'in' },
+];
 
-html {
-  scroll-behavior: smooth;
-}
+const projects = [
+  {
+    title: 'PharmaCycle.AI',
+    description:
+      'An AI-powered medicine stock management and redistribution platform that helps pharmacies monitor inventory, receive expiry alerts, and redistribute suitable medicines to nearby verified pharmacies and healthcare organizations that need them.',
+    stack: ['AI', 'Healthcare', 'Inventory', 'SaaS'],
+    link: 'https://pharm-cycle.vercel.app/',
+    image: '/images/project-placeholder.svg',
+  },
+];
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: #020817;
-  color: #e2e8f0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-[#12070d] text-[#f9e9ee] antialiased">
+      <div className="mx-auto max-w-7xl px-5 pb-16 pt-8 sm:px-8 lg:px-12">
+        <header className="sticky top-0 z-50 mb-12 border-b border-[#46202d]/80 bg-[#12070d]/75 backdrop-blur-xl">
+          <nav className="mx-auto flex max-w-7xl items-center justify-between py-4">
+            <a href="#top" className="text-lg font-semibold tracking-[0.2em] text-[#f8dfe5] uppercase">
+              Ayomikun
+            </a>
+            <div className="hidden items-center gap-7 text-sm text-[#f0c7d2] md:flex">
+              <a href="#about" className="transition hover:text-white">About</a>
+              <a href="#projects" className="transition hover:text-white">Projects</a>
+              <a href="#contact" className="transition hover:text-white">Contact</a>
+            </div>
+          </nav>
+        </header>
 
-* {
-  box-sizing: border-box;
-}
+        <section id="top" className="grid items-center gap-12 pb-20 pt-6 md:grid-cols-[1.25fr_0.75fr]">
+          <div>
+            <p className="mb-5 inline-flex rounded-full border border-[#a34d6b]/40 bg-[#2a0d17]/70 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.28em] text-[#f0b3c5]">
+              Software Developer • Blockchain Engineer
+            </p>
+            <h1 className="max-w-3xl text-4xl font-black leading-[0.95] tracking-[-0.05em] text-[#fff5f7] sm:text-5xl lg:text-7xl">
+              ABDUL-GANIY HABEEBULLAH <span className="font-serif italic text-[#f7c3d0]">OLUWATOBILOBA AYOMIKUN</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-[#e7ccd4]">
+              I build user-focused digital products, scalable web experiences, and blockchain-powered solutions that bring value to everyday people.
+            </p>
 
-a {
-  text-decoration: none;
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#projects"
+                className="rounded-full bg-[#7b1f3d] px-6 py-3 text-sm font-semibold uppercase tracking-[0.1em] text-[#fff7f8] shadow-[0_0_30px_rgba(123,31,61,0.45)] transition hover:bg-[#8f244d]"
+              >
+                View Projects
+              </a>
+              <a
+                href="#contact"
+                className="rounded-full border border-[#8f4d65] bg-[#1a0b12] px-6 py-3 text-sm font-semibold uppercase tracking-[0.1em] text-[#f9e9ee] transition hover:border-[#bb7d96] hover:bg-[#201017]"
+              >
+                Contact Me
+              </a>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-[#7a364f] bg-[#190d15] px-3 py-2 text-xs font-medium uppercase tracking-[0.18em] text-[#f4dfe7] transition hover:border-[#ba7d93] hover:text-white"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-6 rounded-[2rem] bg-[radial-gradient(circle,_rgba(151,58,91,0.45),_transparent_58%)] blur-3xl" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-[#5f2438] bg-[linear-gradient(135deg,_rgba(31,12,18,0.92),_rgba(79,19,38,0.9))] p-6 shadow-[0_0_45px_rgba(88,13,28,0.35)]">
+              <div className="mb-5 flex items-center justify-between text-[10px] font-medium uppercase tracking-[0.2em] text-[#f0c7d2]">
+                <span>Profile</span>
+                <span className="rounded-full border border-[#ae6d82] bg-[#2b1119] px-2 py-1 text-[#f4dfe7]">Available</span>
+              </div>
+
+              <div className="rounded-[1.75rem] border border-[#6a3043] bg-[#160c12]/80 p-5">
+                <img
+                  src="/images/profile-placeholder.svg"
+                  alt="Ayomikun profile"
+                  className="mb-5 h-28 w-28 rounded-full border-4 border-[#f8dfe5]/60 object-cover shadow-[0_0_30px_rgba(255,200,216,0.15)]"
+                />
+                <h2 className="font-serif text-3xl italic text-[#fff0f4]">Ayomikun</h2>
+                <p className="mt-2 text-sm text-[#d5a9b8]">Developer • Engineer • Builder</p>
+
+                <div className="mt-6 space-y-3 text-sm text-[#f9e9ee]">
+                  <div className="flex items-center justify-between border-b border-[#4d1d2d] pb-2">
+                    <span className="text-[#e7ccd4]">Focus</span>
+                    <span className="text-[#f5d5de]">Web + Blockchain</span>
+                  </div>
+                  <div className="flex items-center justify-between border-b border-[#4d1d2d] pb-2">
+                    <span className="text-[#e7ccd4]">Location</span>
+                    <span className="text-[#f5d5de]">Nigeria</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[#e7ccd4]">Specialty</span>
+                    <span className="text-[#f5d5de]">Product-led tech</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="py-16">
+          <div className="mb-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[#f0b3c5]">About</p>
+            <h2 className="mt-3 max-w-2xl font-serif text-4xl italic text-[#fff5f7] sm:text-5xl">
+              Creating elegant technology that solves real-world problems.
+            </h2>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+            <div className="rounded-[1.75rem] border border-[#5a2336] bg-[#1a0c12] p-8 shadow-[0_18px_50px_rgba(21,5,12,0.4)]">
+              <p className="text-lg leading-8 text-[#f0dfe6]">
+                I’m a software developer and blockchain engineer with a strong focus on building reliable, efficient, and impactful digital systems.
+                My work blends product thinking, software engineering, and user-centered design to create smart solutions that are both technically solid and commercially useful.
+              </p>
+            </div>
+
+            <div className="rounded-[1.75rem] border border-[#5a2336] bg-[#1a0c12] p-8 shadow-[0_18px_50px_rgba(21,5,12,0.4)]">
+              <h3 className="mb-5 font-serif text-2xl italic text-[#fff5f7]">Skills</h3>
+              <div className="flex flex-wrap gap-2.5">
+                {skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full border border-[#8d4662] bg-[#220d16] px-3 py-1.5 text-xs font-medium uppercase tracking-[0.12em] text-[#f0dfe6]"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" className="py-16">
+          <div className="mb-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[#f0b3c5]">Projects</p>
+            <h2 className="mt-3 font-serif text-4xl italic text-[#fff5f7] sm:text-5xl">Featured work</h2>
+          </div>
+
+          <div className="grid gap-7">
+            {projects.map((project) => (
+              <article
+                key={project.title}
+                className="overflow-hidden rounded-[2rem] border border-[#5a2336] bg-[linear-gradient(135deg,_rgba(24,10,16,0.98),_rgba(57,17,28,0.9))] shadow-[0_18px_60px_rgba(15,4,9,0.45)]"
+              >
+                <div className="grid gap-0 md:grid-cols-[0.9fr_1.1fr]">
+                  <div className="border-b border-[#5a2336] bg-[#190d12] md:border-b-0 md:border-r">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+
+                  <div className="p-7 md:p-9">
+                    <div className="mb-3 flex items-center justify-between gap-4">
+                      <h3 className="font-serif text-3xl italic text-[#fff5f7]">{project.title}</h3>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-full border border-[#bf8397] bg-[#2a0d17] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f7dae5] transition hover:bg-[#381522]"
+                      >
+                        Live Demo
+                      </a>
+                    </div>
+
+                    <p className="max-w-2xl text-base leading-8 text-[#f2dfe6]">{project.description}</p>
+
+                    <div className="mt-6 flex flex-wrap gap-2.5">
+                      {project.stack.map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full border border-[#9f4a66] bg-[#2a0d17] px-2.5 py-1.5 text-[10px] font-medium uppercase tracking-[0.16em] text-[#f5dfe8]"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="py-16">
+          <div className="rounded-[2rem] border border-[#5a2336] bg-[linear-gradient(135deg,_rgba(61,14,27,0.72),_rgba(19,9,13,0.9))] p-8 shadow-[0_18px_60px_rgba(15,6,9,0.45)] sm:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[#f0b3c5]">Contact</p>
+            <h2 className="mt-3 font-serif text-4xl italic text-[#fff5f7] sm:text-5xl">Let’s build something meaningful.</h2>
+
+            <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              <a href="tel:+2348100474453" className="rounded-[1.25rem] border border-[#7d384f] bg-[#1b0d13] p-5 transition hover:border-[#bf8397] hover:bg-[#220d16]">
+                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#e8c9d4]">Phone</p>
+                <p className="mt-3 text-lg font-medium text-[#fdf4f7]">08100474453</p>
+              </a>
+
+              <a href="tel:+2347073816856" className="rounded-[1.25rem] border border-[#7d384f] bg-[#1b0d13] p-5 transition hover:border-[#bf8397] hover:bg-[#220d16]">
+                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#e8c9d4]">Alt Phone</p>
+                <p className="mt-3 text-lg font-medium text-[#fdf4f7]">07073816856</p>
+              </a>
+
+              <a href="mailto:habeebayomikun600@gmail.com" className="rounded-[1.25rem] border border-[#7d384f] bg-[#1b0d13] p-5 transition hover:border-[#bf8397] hover:bg-[#220d16]">
+                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#e8c9d4]">Email</p>
+                <p className="mt-3 text-lg font-medium text-[#fdf4f7] break-all">habeebayomikun600@gmail.com</p>
+              </a>
+
+              <a href="https://www.linkedin.com/in/habeeb-abdul-ganiy-6a6281355" target="_blank" rel="noreferrer" className="rounded-[1.25rem] border border-[#7d384f] bg-[#1b0d13] p-5 transition hover:border-[#bf8397] hover:bg-[#220d16]">
+                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#e8c9d4]">LinkedIn</p>
+                <p className="mt-3 text-lg font-medium text-[#fdf4f7]">Profile</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <footer className="mt-10 border-t border-[#4f1c2b] py-6 text-center text-sm text-[#d7b2bd]">
+          © 2026 Ayomikun. Built with purpose.
+        </footer>
+      </div>
+    </main>
+  );
 }
